@@ -44,6 +44,12 @@ spring:
             - Path=/api/bookings/**
           filters:
             - JwtAuthFilter   
+        - id: booking-service
+          uri: lb://booking-service
+          predicates:
+            - Path=/api/bookings/**
+          filters:
+            - JwtAuthFilter       
 eureka:
   client:
     service-url:
